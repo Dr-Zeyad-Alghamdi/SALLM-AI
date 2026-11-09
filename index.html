@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALLM: Socially Aligned Large Language Model</title>
+    <!-- Tailwind CSS is free to use via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <!-- Header Section -->
+        <header class="bg-white p-6 md:p-10 rounded-xl shadow-md mb-10 border-t-4 border-blue-800">
+            <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">SALLM : Socially Aligned Large Language Model</h1>
+            <p class="text-xl text-gray-700 font-semibold mb-3">
+                <span class="text-blue-600">Model Perk:</span> Trained and fine-tuned on Saudi social media data.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                Data selection using state-of-the-art approaches and tools to get the finest data out of an over 1 million pool of Saudi social media posts and comments.
+            </p>
+            <div class="inline-block bg-blue-100 text-blue-900 px-4 py-2 rounded-lg text-sm font-bold tracking-wide">
+                Initial Release: 11/11/2026
+            </div>
+        </header>
+
+        <!-- SALLM V1 Models -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2 mb-6">SALLM V1</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Box 1: SALLEM Q9B -->
+                <a href="https://huggingface.co/dr.zeyad_alghamdi" target="_blank" class="block bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-300 border-t-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">SALLEM Q9B</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Qwen 3.5 Architecture</li>
+                        <li>9B Parameters</li>
+                    </ul>
+                </a>
+
+                <!-- Box 2: SALLM J7B -->
+                <a href="https://huggingface.co/dr.zeyad_alghamdi" target="_blank" class="block bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-300 border-t-4 border-green-500">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">SALLM J7B</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Jais3 Architecture</li>
+                        <li>7B Parameters</li>
+                    </ul>
+                </a>
+
+                <!-- Box 3: SALLM A7B -->
+                <a href="https://huggingface.co/dr.zeyad_alghamdi" target="_blank" class="block bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-300 border-t-4 border-purple-500">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">SALLM A7B</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>ALLaM Architecture</li>
+                        <li>7B Parameters</li>
+                    </ul>
+                </a>
+
+                <!-- Box 4: SALLM x9B -->
+                <a href="https://huggingface.co/dr.zeyad_alghamdi" target="_blank" class="block bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all duration-300 border-t-4 border-red-600 bg-red-50">
+                    <h3 class="text-xl font-bold text-red-900 mb-4">SALLM x9B</h3>
+                    <ul class="list-disc list-inside text-red-800 space-y-2">
+                        <li>Restricted Model</li>
+                        <li>Access to researchers only provided via approval</li>
+                    </ul>
+                </a>
+            </div>
+        </section>
+
+        <!-- Updates Table -->
+        <section>
+            <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2 mb-6">Update & Tentative Data</h2>
+            <div class="bg-white rounded-xl shadow overflow-x-auto">
+                <table class="min-w-full text-left border-collapse">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="px-6 py-4 font-semibold text-sm uppercase tracking-wider">ID</th>
+                            <th class="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Update Description</th>
+                            <th class="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Tentative Date</th>
+                            <th class="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700 divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">1</td>
+                            <td class="px-6 py-4">SALLM V1 Initial Release (Q9B, J7B, A7B, x9B)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">11/11/2026</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-green-600 font-bold">Released</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">2</td>
+                            <td class="px-6 py-4">Pushshift Reddit Archive Extraction & DuckDB Validation</td>
+                            <td class="px-6 py-4 whitespace-nowrap">20/11/2026</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-yellow-600 font-bold">In Progress</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">3</td>
+                            <td class="px-6 py-4">GRAPE Preference Metrics Scoring Implementation</td>
+                            <td class="px-6 py-4 whitespace-nowrap">05/12/2026</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold">Planned</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">4</td>
+                            <td class="px-6 py-4">SFTTrainer & QLoRA Fine-tuning Optimization</td>
+                            <td class="px-6 py-4 whitespace-nowrap">15/12/2026</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold">Planned</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">5</td>
+                            <td class="px-6 py-4">DPO Alignment Pipeline Rollout</td>
+                            <td class="px-6 py-4 whitespace-nowrap">10/01/2027</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold">Planned</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">6</td>
+                            <td class="px-6 py-4">Model V2 Dataset Pool Expansion (X/Twitter Archives)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">25/01/2027</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold">Planned</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">7</td>
+                            <td class="px-6 py-4">Interactive Demo Deployment on GitHub Pages</td>
+                            <td class="px-6 py-4 whitespace-nowrap">10/02/2027</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold">Planned</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">8</td>
+                            <td class="px-6 py-4">SALLM x9B Researcher Access Portal Update</td>
+                            <td class="px-6 py-4 whitespace-nowrap">20/02/2027</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold">Planned</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">9</td>
+                            <td class="px-6 py-4">Performance Benchmarking against Baseline Models</td>
+                            <td class="px-6 py-4 whitespace-nowrap">05/03/2027</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold">Planned</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">10</td>
+                            <td class="px-6 py-4">SALLM V1.5 Weights Release</td>
+                            <td class="px-6 py-4 whitespace-nowrap">20/03/2027</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-500 font-bold">Planned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
