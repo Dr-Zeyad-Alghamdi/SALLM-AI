@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- SALLM A7B live demo: GitHub Pages embeds the original Hugging Face Space, without proxying model requests. -->
+<!-- No client-side quota inference: Hugging Face enforces limits, while this page provides neutral bilingual guidance. -->
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102a35">
+<meta name="description" content="Try SALLM A7B in a live embedded Hugging Face chat. Research preview, usage guidance and fallback links.">
+<title>Try SALLM A7B — SALLM</title>
+<style>
+:root{color-scheme:light;--ink:#102a35;--muted:#465e66;--paper:#f8faf7;--line:#d6e1dc;--teal:#126456;--mint:#a3e7d4;--surface:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Segoe UI",Arial,sans-serif;line-height:1.75;font-size:16px}html[lang="ar"] body{font-family:Tahoma,Arial,sans-serif;line-height:1.9}
+a{color:inherit}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #ba720c;outline-offset:4px}button{font:inherit;cursor:pointer}h1,h2{line-height:1.35}p{margin:.4rem 0 1rem}html[lang="en"] span[lang="ar"],html[lang="ar"] span[lang="en"]{display:none!important}
+.wrap{width:min(100%,1220px);margin:auto;padding-inline:28px}.site-header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav-inner{min-height:78px;display:flex;align-items:center;gap:20px;justify-content:space-between}.brand{font-size:1.65rem;font-weight:800;text-decoration:none;letter-spacing:-.5px;direction:ltr}.nav-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.back{text-decoration:none;font-weight:650;color:var(--teal)}.back:hover{text-decoration:underline}.language-picker{display:flex;direction:ltr;padding:3px;border:1px solid #a1b5ae;border-radius:10px;background:#fff;gap:3px}.lang-btn{border:0;border-radius:7px;padding:8px 12px;min-height:40px;color:var(--ink);background:transparent}.lang-btn[aria-pressed="true"]{background:var(--ink);color:#fff;font-weight:700}
+.page-title{padding-block:30px 20px}.eyebrow{color:var(--teal);font-size:.88rem;font-weight:800;letter-spacing:.05em}.page-title h1{font-size:clamp(1.85rem,4vw,2.8rem);margin:.3rem 0 .45rem}.page-title p{color:var(--muted);max-width:850px}.pill{border:1px solid #b5d8c8;background:#e9f3ed;border-radius:999px;padding:5px 12px;color:var(--teal);font-size:.82rem;font-weight:700;display:inline-block}
+.demo-toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 20px;background:var(--ink);color:white;border-radius:15px 15px 0 0}.demo-name{font-weight:800;direction:ltr}.demo-small{color:#d3e5e0;font-size:.85rem}.tool-actions{display:flex;gap:9px;flex-wrap:wrap}.toolbar-link{border:1px solid #adc8c0;border-radius:8px;padding:9px 13px;min-height:44px;text-decoration:none;color:#fff;font-size:.9rem;font-weight:650;display:inline-flex;align-items:center;justify-content:center}.toolbar-link:hover{background:#235261}.toolbar-link.external{background:#176a5c;border-color:#176a5c}.toolbar-link.external:hover{background:#168a72}
+.demo-shell{border:1px solid #c6d7ce;border-top:0;background:#fff;border-radius:0 0 15px 15px;overflow:hidden;box-shadow:0 12px 36px #102a3510}.demo-frame{display:block;width:100%;height:clamp(590px,78vh,950px);border:0;background:#fff}.below-demo{color:var(--muted);font-size:.92rem;margin-top:14px;line-height:1.65}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:27px;margin-bottom:30px}.info-card{background:white;border:1px solid var(--line);border-radius:12px;padding:23px}.info-card h2{font-size:1.17rem;margin:0 0 10px}.info-card p,.info-card li{color:var(--muted);font-size:.98rem}.info-card ul{padding-inline-start:23px;margin:10px 0 0}.help-section{margin-bottom:46px}.help-section h2{font-size:1.4rem;margin:0 0 13px}.help-section details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-top:9px;padding:10px 20px}.help-section summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}.help-section details p{color:var(--muted);margin:7px 0 12px}.inline-link{color:var(--teal);font-weight:700;text-underline-offset:3px}.footer{background:var(--ink);color:#d4e2e0;padding:22px 0}.footer a{color:inherit}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:.9rem}
+.skip{position:absolute;top:-100px;inset-inline-start:12px;background:#fff;color:#102a35;padding:12px;z-index:50}.skip:focus{top:8px}
+@media(max-width:760px){.wrap{padding-inline:15px}.nav-inner{padding-block:10px;flex-wrap:wrap;min-height:0}.page-title{padding-block:22px 12px}.demo-toolbar{border-radius:11px 11px 0 0;padding:12px}.demo-frame{height:clamp(570px,82vh,860px)}.info-grid{grid-template-columns:1fr}.info-card{padding:19px}.tool-actions{width:100%}.toolbar-link{flex:1}.brand{font-size:1.45rem}.back{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to chat</span><span lang="ar">انتقل إلى المحادثة</span></a>
+<header class="site-header"><div class="wrap nav-inner">
+<a class="brand" href="index.html" aria-label="SALLM home">SALLM</a>
+<div class="nav-right">
+<a class="back" href="index.html"><span lang="en">← Back to the project</span><span lang="ar">العودة إلى المشروع ←</span></a>
+<div class="language-picker" role="group" aria-label="Language / اللغة"><button class="lang-btn" id="lang-en" type="button" lang="en" aria-pressed="true">English</button><button class="lang-btn" id="lang-ar" type="button" lang="ar" aria-pressed="false">العربية</button></div>
+</div></div></header>
+<main class="wrap" id="main">
+<section class="page-title"><div class="eyebrow"><span lang="en">SALLM / LIVE RESEARCH PREVIEW</span><span lang="ar">SALLM / تجربة بحثية مباشرة</span></div>
+<h1><span lang="en">Talk with SALLM A7B</span><span lang="ar">تحدث مع SALLM A7B</span></h1>
+<p><span lang="en">Try the ALLaM-based SALLM assistant here, without leaving the SALLM website. Model responses are generated by Hugging Face ZeroGPU.</span><span lang="ar">جرّب مساعد SALLM المبني على ALLaM هنا مباشرة، دون مغادرة موقع SALLM. تُولّد الردود باستخدام خدمة ZeroGPU من Hugging Face.</span></p>
+<span class="pill"><span lang="en">Experimental model · Answers may be inaccurate</span><span lang="ar">نموذج تجريبي · قد لا تكون الإجابات دقيقة</span></span>
+</section>
+<section aria-label="SALLM A7B live chat">
+<div class="demo-toolbar"><div><div class="demo-name">SALLM A7B</div><div class="demo-small"><span lang="en">Live Hugging Face demo</span><span lang="ar">تجربة مباشرة من Hugging Face</span></div></div>
+<div class="tool-actions">
+<a class="toolbar-link external" href="https://huggingface.co/spaces/Dr-Zeyad-Alghamdi/SALLM-A7B-V1" target="_blank" rel="noopener noreferrer"><span lang="en">Open on Hugging Face ↗</span><span lang="ar">افتح على Hugging Face ↗</span></a>
+<a class="toolbar-link" href="#help"><span lang="en">Having trouble?</span><span lang="ar">واجهت مشكلة؟</span></a>
+</div></div>
+<div class="demo-shell">
+<iframe class="demo-frame" id="sallm-frame" src="https://dr-zeyad-alghamdi-sallm-a7b-v1.hf.space" title="SALLM A7B — live chatbot" allow="clipboard-read; clipboard-write" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+<p class="below-demo"><span lang="en">The chat runs on Hugging Face. A slow start does not necessarily mean the model is offline. If the embedded chat does not respond, use “Open on Hugging Face” above.</span><span lang="ar">تعمل المحادثة على Hugging Face. تأخر البداية لا يعني بالضرورة توقف النموذج. إذا لم تستجب المحادثة المضمّنة، جرّب زر «افتح على Hugging Face» أعلاه.</span></p>
+</section>
+<div class="info-grid">
+<section class="info-card"><h2><span lang="en">⏱ Free GPU usage limits</span><span lang="ar">⏱ حدود الاستخدام المجاني</span></h2>
+<p><span lang="en">Hugging Face applies a shared daily ZeroGPU allowance across all ZeroGPU Spaces, not a new quota per SALLM model. A request can be rejected when the remaining allowance is too small for its required GPU time.</span><span lang="ar">تطبّق Hugging Face رصيد استخدام يوميًّا مشتركًا بين جميع مساحات ZeroGPU، وليس رصيدًا جديدًا لكل نموذج SALLM. وقد يُرفض الطلب عندما يكون الرصيد المتبقي أقل من الزمن المطلوب لتشغيله.</span></p>
+<p><span lang="en">Included quotas currently reset 24 hours after your first GPU use in the quota window, rather than at midnight. Exact remaining time and reset details are controlled by Hugging Face.</span><span lang="ar">يتجدد الرصيد المشمول حاليًا بعد ٢٤ ساعة من أول استخدام للمعالجة في فترة الرصيد، وليس بالضرورة عند منتصف الليل. تدير Hugging Face تفاصيل الوقت المتبقي والتجدد.</span></p>
+</section>
+<section class="info-card"><h2><span lang="en">💬 Before you start</span><span lang="ar">💬 قبل أن تبدأ</span></h2>
+<ul><li><span lang="en">You can try the chatbot without creating an account, subject to platform limits.</span><span lang="ar">يمكنك تجربة المحادثة دون إنشاء حساب، وفق حدود المنصة.</span></li>
+<li><span lang="en">Please do not send passwords, private identifiers or sensitive conversations.</span><span lang="ar">يرجى عدم إرسال كلمات المرور أو بيانات التعريف الخاصة أو محادثات حساسة.</span></li>
+<li><span lang="en">SALLM is a research preview, not a professional advice service.</span><span lang="ar">SALLM إصدار بحثي تجريبي وليس خدمة استشارات متخصصة.</span></li></ul>
+</section></div>
+<section class="help-section" id="help"><h2><span lang="en">Help & availability</span><span lang="ar">المساعدة وتوفر الخدمة</span></h2>
+<details><summary><span lang="en">My GPU quota ended. What happens now?</span><span lang="ar">انتهى رصيد المعالجة؛ ماذا يحدث الآن؟</span></summary><p><span lang="en">Hugging Face may reject further generation requests until the allowance resets. You can still view this webpage. The embedded chatbot or Hugging Face may show a quota-related error; this website cannot see your remaining quota or display a personal countdown. Reloading the page or switching SALLM models does not reset your allowance.</span><span lang="ar">قد ترفض Hugging Face طلبات إنشاء الردود حتى يتجدد الرصيد. تظل صفحة الموقع متاحة لك. قد تظهر رسالة حد الاستخدام داخل المحادثة أو على Hugging Face؛ ولا يستطيع هذا الموقع معرفة رصيدك أو عرض عدّاد شخصي للتجدد. تحديث الصفحة أو الانتقال إلى نموذج SALLM آخر لا يعيد تعبئة الرصيد.</span></p></details>
+<details><summary><span lang="en">The chatbot is blank or not responding.</span><span lang="ar">المحادثة لا تظهر أو لا تستجيب.</span></summary><p><span lang="en">The Space may be starting, paused, under maintenance, or blocked by browser embedding restrictions. <a class="inline-link" href="https://huggingface.co/spaces/Dr-Zeyad-Alghamdi/SALLM-A7B-V1" target="_blank" rel="noopener noreferrer">Open the Space directly</a> for platform messages. If it is paused or crashed, only the owner can restore service. A failed request does not mean your quota is exhausted.</span><span lang="ar">قد يكون النموذج قيد البدء أو متوقفًا مؤقتًا أو تحت الصيانة، أو قد يمنع المتصفح تضمين الصفحة. <a class="inline-link" href="https://huggingface.co/spaces/Dr-Zeyad-Alghamdi/SALLM-A7B-V1" target="_blank" rel="noopener noreferrer">افتح النموذج مباشرةً</a> لعرض رسائل المنصة. إذا كان متوقفًا أو تعطل، فاستعادة الخدمة تتطلب إجراءً من مالك النموذج. عدم ظهور الرد لا يعني بالضرورة انتهاء الرصيد.</span></p></details>
+<details><summary><span lang="en">Does signing in give me a different quota?</span><span lang="ar">هل تختلف حدود الاستخدام عند تسجيل الدخول؟</span></summary><p><span lang="en">Yes. Current included daily ZeroGPU allowances are 2 minutes for anonymous visitors, 5 minutes for free Hugging Face accounts, and 40 minutes for PRO accounts. These are shared across ZeroGPU Spaces. Actual eligibility and limits may change.</span><span lang="ar">نعم. الرصيد اليومي المشمول حاليًا هو دقيقتان للزائر دون حساب، و٥ دقائق للحساب المجاني، و٤٠ دقيقة لحساب PRO. هذه الأرصدة مشتركة بين مساحات ZeroGPU، وقد تتغير الشروط والحدود.</span></p></details>
+<p><a class="inline-link" href="index.html#report-issue"><span lang="en">Report a technical issue on the SALLM website</span><span lang="ar">الإبلاغ عن مشكلة تقنية عبر موقع SALLM</span></a></p>
+</section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span>© SALLM · Socially Aligned Large Language Model</span><a href="index.html"><span lang="en">Back to SALLM</span><span lang="ar">العودة إلى SALLM</span></a></div></footer>
+<script>
+// Preserve the existing SALLM English/Arabic preference across index.html and try.html.
+// The embed is intentionally isolated from the static page: no user tokens or quota data are collected here.
+(() => {
+  const isValid = v => v === 'ar' || v === 'en';
+  let saved = '';
+  try { saved = localStorage.getItem('sallm-language') || ''; } catch (_) {}
+  const requested = new URLSearchParams(location.search).get('lang');
+  const initial = isValid(requested) ? requested : isValid(saved) ? saved : (navigator.language || '').startsWith('ar') ? 'ar' : 'en';
+  function apply(lang, remember=false) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = lang === 'ar' ? 'جرّب SALLM A7B — SALLM' : 'Try SALLM A7B — SALLM';
+    document.getElementById('lang-en').setAttribute('aria-pressed', String(lang === 'en'));
+    document.getElementById('lang-ar').setAttribute('aria-pressed', String(lang === 'ar'));
+    document.querySelectorAll('a[href]').forEach(a => {
+      const raw = a.getAttribute('href');
+      if (!raw || raw.startsWith('#') || /^(https?:|mailto:|tel:)/i.test(raw)) return;
+      try {
+        const u = new URL(raw, location.href);
+        if (u.pathname.endsWith('.html')) {
+          u.searchParams.set('lang', lang);
+          a.setAttribute('href', u.pathname.split('/').pop() + u.search + u.hash);
+        }
+      } catch (_) {}
+    });
+    if (remember) {
+      try { localStorage.setItem('sallm-language', lang); } catch (_) {}
+      try { const u = new URL(location.href); u.searchParams.set('lang', lang); history.replaceState(null,'',u); } catch (_) {}
+    }
+  }
+  apply(initial);
+  document.getElementById('lang-en').addEventListener('click', () => apply('en',true));
+  document.getElementById('lang-ar').addEventListener('click', () => apply('ar',true));
+})();
+</script>
+</body>
+</html>
