@@ -1,0 +1,310 @@
+<!-- SALLM AI / سالم: complete bilingual static website page for GitHub Pages. -->
+<!-- Retains existing navigation, Google Forms links, and Hugging Face model integration. -->
+<!DOCTYPE html>
+
+<!-- Bilingual SALLM release page, ready to replace the GitHub Pages index.html. -->
+<!-- Edit the labelled sections below; language switching includes RTL and saved preferences. -->
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>سالم | SALLM AI — محادثات أقرب لأسلوبك</title>
+<meta content="سالم (SALLM AI): رفيقك الذكي للأفكار والنقاشات اليومية باللهجة السعودية. جرّب SALLM A7B مباشرة من الموقع." name="description"/>
+<meta content="#102a35" name="theme-color"/><meta content="SALLM AI — Your companion for conversations and ideas" property="og:title"/><meta content="سالم — خويّك في السوالف، وشريكك في الأفكار. جرّب SALLM AI عبر الموقع." property="og:description"/><meta content="website" property="og:type"/><meta content="https://dr-zeyad-alghamdi.github.io/SALLM-AI/" property="og:url"/>
+<style>
+
+/* Shared type, spacing, and colors keep both languages readable. */
+/* Mobile layouts prioritize model access, full-width cards, and visible language controls. */
+:root{--ink:#102a35;--muted:#465e66;--paper:#f8faf7;--line:#d6e1dc;--mint:#a3e7d4;--teal:#126456;--surface:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px;font-size:16px}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Segoe UI",Arial,sans-serif;font-size:1.0625rem;line-height:1.8;-webkit-text-size-adjust:100%}
+html[lang=en] span[lang=ar],html[lang=ar] span[lang=en]{display:none!important}html[lang=ar] body{font-family:Tahoma,Arial,sans-serif;line-height:1.95}html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] .eyebrow{letter-spacing:0}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a,button{touch-action:manipulation}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #ba720c;outline-offset:5px}p{margin-block:12px 20px}h1,h2,h3{line-height:1.35;text-wrap:balance}h2{font-size:clamp(1.875rem,3vw,2.6rem);letter-spacing:-.8px;margin:10px 0 16px}h3{font-size:1.25rem}.wrap{width:min(100%,1200px);padding-inline:32px;margin-inline:auto}.skip{position:absolute;top:-100px;background:white;padding:12px;z-index:50}.skip:focus{top:8px}
+.nav{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:var(--paper);box-shadow:0 2px 12px #102a3508}.nav-inner{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-size:1.625rem;font-weight:700;direction:ltr;line-height:1.4}nav{display:flex;align-items:center;gap:26px}.nav-link{font-size:1rem;font-weight:600;padding-block:10px}.nav-link:hover{color:var(--teal)}.language-picker{display:flex;direction:ltr;padding:4px;background:white;border:1px solid #9aafa6;border-radius:9px;flex-shrink:0}.lang-btn{font-size:1rem;min-height:46px;padding:7px 13px;border:0;border-radius:5px;background:transparent;color:var(--ink)}.lang-btn[aria-pressed=true]{background:var(--ink);color:white;font-weight:700}.lang-btn:hover{box-shadow:inset 0 0 0 1px var(--teal)}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:64px;padding-block:68px}.hero>*{min-width:0}.eyebrow{display:flex;align-items:center;gap:10px;font-size:.9375rem;font-weight:700;color:var(--teal);letter-spacing:.4px}.dot{height:8px;width:8px;border-radius:50%;background:var(--teal)}h1{font-size:clamp(2.6rem,5vw,4.5rem);letter-spacing:-2.5px;line-height:1.12;margin:24px 0}h1 em{color:var(--teal);font-style:normal}html[lang=ar] h1{font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.5}.lede{font-size:1.1875rem;color:var(--muted);max-width:570px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:52px;padding:12px 21px;border:1px solid var(--ink);border-radius:8px;font-size:1rem;font-weight:700;line-height:1.5}.primary{color:white;background:var(--ink)}.primary:hover{background:var(--teal)}.secondary:hover{background:#e6eee9}.meta{font-size:.9375rem;color:var(--muted);margin-top:24px;line-height:1.8}
+.art{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:var(--mint);border-radius:14px;min-height:440px;display:flex;align-items:center;justify-content:center}.art:before,.art:after{content:'';position:absolute;width:380px;height:380px;border:1px solid #9be2cf40;border-radius:50%;transform:rotate(-27deg) scaleX(.65)}.art:after{transform:rotate(27deg) scaleX(.65);width:440px;height:440px}.art-grid{position:absolute;inset:0;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:32px 32px}.art-title{font-size:4.25rem;line-height:1.5;font-weight:700;z-index:1;text-align:center;direction:rtl}.art-top{position:absolute;top:22px;inset-inline-start:24px;font-size:.9375rem;color:#d4e4df}.art-label{position:absolute;inset-inline:24px;bottom:20px;display:flex;justify-content:space-between;gap:15px;border-top:1px solid #ffffff30;padding-top:12px;font-size:.875rem;color:#d4e4df;direction:ltr}
+.strip{border-block:1px solid var(--line);background:#edf3ee}.strip-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:22px;font-size:1rem;color:var(--muted)}section{padding-block:72px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:30px}.section-head>div{flex:1}.section-head p{max-width:430px;font-size:1.0625rem;color:var(--muted);margin-bottom:16px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.card{display:flex;flex-direction:column;align-items:start;background:white;border:1px solid var(--line);border-radius:12px;padding:28px;box-shadow:0 6px 20px #102a3504}.card:hover{border-color:var(--teal)}.chip{display:inline-block;font-size:.9375rem;line-height:1.6;padding:7px 11px;background:#e9f3ed;color:var(--teal);border-radius:6px;font-weight:600}.card h3{font-size:1.875rem;direction:ltr;margin:24px 0 8px}.card p{font-size:1.0625rem;color:var(--muted);margin:8px 0 18px}.model-number{font-size:1rem;color:var(--muted);margin-bottom:26px}.card .btn{width:100%;margin-top:auto;justify-content:space-between}.note{font-size:1rem;color:var(--muted);margin-top:22px;max-width:950px}
+.research{background:var(--ink);color:#fff}.research .eyebrow{color:var(--mint)}.research-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:72px}.research p{color:#d3e0e2;font-size:1.0625rem}.principle{display:grid;grid-template-columns:30px 1fr;gap:18px;border-top:1px solid #ffffff30;padding:24px 0}.principle b{font-size:1rem;color:var(--mint)}.principle h3{margin:0 0 10px}.principle p{margin:0}.research-foot{border-top:1px solid #ffffff30;padding-top:24px;margin-top:30px;font-size:1rem;color:#d3e0e2}
+.roadmap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.milestone{display:grid;grid-template-columns:1fr auto;gap:15px 20px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px}.milestone h3{grid-column:1/-1;grid-row:2;font-size:1.1875rem;line-height:1.7;margin:0}.milestone time{font-size:1rem;color:var(--muted);font-variant-numeric:tabular-nums}.status{justify-self:start;display:inline-flex;align-items:center;gap:8px;font-size:1rem;font-weight:600;background:#edf1f4;color:#354d61;border-radius:6px;padding:5px 11px;line-height:1.6;white-space:nowrap}.status:before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}.released{background:#e2f4e8;color:#175e3b}.progress{background:#fff0d7;color:#79500b}.access{margin-top:28px;background:#eaf1ec;padding:28px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;gap:28px}.access h3{margin:0 0 10px}.access p{font-size:1.0625rem;color:var(--muted);margin:0}.access>.chip{flex-shrink:0}
+.faq{display:grid;grid-template-columns:.85fr 1.5fr;gap:70px;border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line);padding:20px 0}summary{cursor:pointer;font-size:1.125rem;font-weight:600;min-height:48px;line-height:1.7}details p{font-size:1.0625rem;color:var(--muted);margin:12px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:35px}footer{background:var(--ink);padding:36px 0;color:#d3e0e2}footer .brand{color:white}footer p{font-size:.9375rem;margin:10px 0}.footer-links{display:flex;flex-wrap:wrap;gap:24px;font-size:1rem}.footer-links a{padding-block:10px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:1000px){.hero{gap:35px}.art{min-height:400px}.art-label{font-size:.875rem;flex-wrap:wrap}.research-layout{gap:40px}.cards{gap:16px}.card{padding:22px}.card h3{font-size:1.625rem}.section-head{gap:25px}nav{gap:18px}.faq{gap:35px}}
+@media(max-width:760px){html{scroll-padding-top:150px}.wrap{padding-inline:22px}.nav-inner{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding-block:10px;min-height:0}nav{display:contents}.brand{grid-column:1;grid-row:1}.language-picker{grid-column:2;grid-row:1}.nav-link{grid-row:2;text-align:center;padding:10px 2px;font-size:1rem;min-height:44px}.nav-inner{grid-template-columns:repeat(3,minmax(0,1fr))}.brand{grid-column:1}.language-picker{grid-column:2/4;justify-self:end}.nav-link:nth-child(1){grid-column:1}.nav-link:nth-child(2){grid-column:2}.nav-link:nth-child(3){grid-column:3}.hero{grid-template-columns:1fr;padding-block:35px 40px;gap:0}.hero .art{display:none}h1{font-size:clamp(2.25rem,8vw,3.5rem);letter-spacing:-1.4px}html[lang=ar] h1{font-size:clamp(2rem,7.4vw,3.1rem);line-height:1.55}.lede{font-size:1.125rem}.actions{display:grid;grid-template-columns:1fr}.btn{min-height:54px}.meta{font-size:1rem}.strip-inner{flex-direction:column;align-items:start;gap:10px;padding-block:20px}.strip-inner>span{padding-inline-start:14px;border-inline-start:3px solid #94bbab}.cards,.research-layout,.faq{grid-template-columns:1fr}.section-head{display:block}.section-head p{max-width:none}.research-layout{gap:22px}.roadmap{grid-template-columns:1fr}.card{padding:26px}.card h3{font-size:1.875rem}.milestone{padding:22px}.access,.footer-inner{flex-direction:column;align-items:start}.faq{gap:15px}.footer-links{gap:20px}section{padding-block:48px}.eyebrow{font-size:.9375rem}h2{font-size:1.875rem}.research-foot{line-height:1.9}}
+@media(max-width:380px){.wrap{padding-inline:16px}.lang-btn{padding-inline:10px}.milestone{padding:18px;gap:12px}.milestone time{font-size:.9375rem}.status{padding-inline:8px}.nav-link{font-size:.9375rem}.brand{font-size:1.5rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Editorial updates, contact directory, and usage notice. */
+/* Contact values remain empty until the site owner supplies real public details. */
+.quick-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;padding-block:20px;border-bottom:1px solid var(--line);font-size:1rem}.quick-links a,.text-link{color:var(--teal);font-weight:650;text-decoration:underline;text-underline-offset:5px;padding-block:8px}.service-notice{padding:22px 26px;background:#edf2f5;border-inline-start:4px solid #587580;border-radius:8px;margin-bottom:22px}.service-notice p{margin:7px 0 0;color:var(--muted);font-size:1rem}.news-item{padding:28px;background:white;border:1px solid var(--line);border-radius:12px}.news-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-size:1rem;color:var(--muted)}.news-item h3{font-size:1.4rem;margin-block:20px 10px}.news-item p{color:var(--muted)}.news-list{display:grid;gap:18px}.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0}.contact-field{background:white;padding:22px;border:1px solid var(--line);border-radius:9px;min-width:0}.contact-field dt{font-weight:650;font-size:1rem}.contact-field dd{margin:10px 0 0;font-size:1rem;color:var(--muted);overflow-wrap:anywhere}.usage-section{background:#edf2ee;border-top:1px solid var(--line)}.notice-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 45px}.notice-grid article{border-top:1px solid #c4d4c9;padding-top:20px}.notice-grid h3{margin:0 0 12px;font-size:1.2rem}.notice-grid p{margin:0;color:var(--muted);font-size:1rem}.footer-links{max-width:480px}
+@media(max-width:850px){.contact-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.contact-grid,.notice-grid{grid-template-columns:1fr}.quick-links{gap:8px 18px}.quick-links>span{width:100%}.news-item{padding:22px}.service-notice{padding:20px}.contact-field{padding:20px}.news-meta{gap:12px}.notice-grid{gap:24px}}
+
+/* Dedicated pages and editable research content. */
+/* Empty contact links are hidden, and unfinished evidence is explicitly labelled. */
+[hidden]{display:none!important}.page-hero{padding-block:46px 30px}.page-hero h1{font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-1px}.page-hero p{max-width:760px;color:var(--muted)}.breadcrumb{font-size:1rem;color:var(--teal);text-decoration:underline}.content-section{padding-block:30px 48px}.page-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.route-card{display:flex;flex-direction:column;align-items:start;padding:24px;border:1px solid var(--line);border-radius:10px;background:white}.route-card h3{margin-top:0}.route-card p{color:var(--muted);flex:1}.route-card a{color:var(--teal);text-decoration:underline;font-weight:650}.placeholder{border:1px dashed #9aacaa;border-radius:8px;padding:20px;background:#f1f5f2;color:var(--muted)}.example-body{min-height:150px}.example-body h4{margin:12px 0 6px;color:var(--ink)}.example-body p{margin:5px 0}.evidence-table{width:100%;border-collapse:collapse;background:white}.evidence-table th,.evidence-table td{text-align:start;padding:17px 20px;border-bottom:1px solid var(--line);vertical-align:top}.evidence-table th{background:#eaf1ed}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}.research-summary{display:grid;grid-template-columns:1fr 1fr;gap:25px}.request-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:35px;align-items:start}.request-form{padding:26px;background:white;border:1px solid var(--line);border-radius:12px}.field{display:block;margin-bottom:21px}.field>label{display:block;font-weight:600;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;font:inherit;color:var(--ink);background:#fcfdfb;border:1px solid #9eafa8;border-radius:6px;padding:11px 13px;min-height:49px}.field textarea{min-height:130px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{outline:3px solid #a3d1bd;outline-offset:2px}.form-note{color:var(--muted);font-size:1rem}.draft-panel{margin-top:25px;border-top:1px solid var(--line);padding-top:20px}.draft-panel textarea{width:100%;min-height:230px;padding:15px;font:inherit;resize:vertical;border:1px solid var(--line);direction:inherit}.draft-status{color:var(--teal);min-height:28px}.check-label{display:flex;align-items:start;gap:10px}.check-label input{width:20px;height:20px;flex-shrink:0;margin-top:6px}.contact-buttons{display:flex;gap:14px;flex-wrap:wrap}.profile-box{border-inline-start:4px solid var(--teal);background:white;padding:28px}.profile-box h3{margin-top:0}.compact-notice{margin-top:25px;font-size:1rem;color:var(--muted)}.long-roadmap{margin-top:20px;padding:20px;border:1px solid var(--line);border-radius:10px}.long-roadmap>.roadmap{margin-top:20px}.project-nav{display:flex;gap:10px 24px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-block:16px}.project-nav a{font-size:1rem;padding-block:8px;color:var(--teal);text-decoration:underline}.page-links .btn{margin-top:auto}.contact-field dd:empty{display:none}
+@media(max-width:800px){.page-links{grid-template-columns:1fr 1fr}.request-layout,.research-summary{grid-template-columns:1fr}.request-form{padding:22px}.page-hero{padding-top:30px}.evidence-table th,.evidence-table td{padding:14px}.page-hero h1{font-size:2.2rem}}
+@media(max-width:520px){.page-links{grid-template-columns:1fr}.project-nav{gap:4px 20px}.profile-box{padding:22px}}
+
+/* Compact one-page disclosures keep secondary details available without a long first view. */
+/* Request links expand the appropriate form, while the header stays accessible on phones. */
+.disclosure{margin-top:14px;padding:0;border:1px solid var(--line);border-radius:10px;background:white;overflow:hidden}.disclosure>summary{padding:18px 22px;margin:0;min-height:60px}.disclosure[open]>summary{border-bottom:1px solid var(--line);background:#eef4ef}.disclosure-body{padding:24px}.disclosure-body>p:first-child{margin-top:0}.request-layout.disclosure-body{padding:24px;gap:28px}.request-layout .request-form{border:0;padding:0}.request-layout aside h2{font-size:1.3rem}.request-layout aside p{font-size:1rem;color:var(--muted)}.usage-compact{padding-top:10px}.onepage-links{display:flex;gap:12px 28px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-block:18px}.onepage-links a{color:var(--teal);font-size:1rem;padding-block:6px;text-decoration:underline;text-underline-offset:4px}.evidence-section{padding-top:48px;padding-bottom:30px}.profile-box .disclosure{margin-top:22px}.profile-box .disclosure>p{padding:20px;margin:0}.contact-buttons:empty{display:none}.request-disclosure{scroll-margin-top:15px}.btn:disabled{cursor:not-allowed;opacity:.6}
+@media(max-width:760px){.disclosure>summary{padding:16px 18px;font-size:1.0625rem}.disclosure-body,.request-layout.disclosure-body{padding:20px}.request-layout{grid-template-columns:1fr}.onepage-links{gap:8px 20px}.notice-grid{grid-template-columns:1fr}.usage-compact{padding-bottom:35px}}
+
+
+/* SALLM single-form contact hub; styling respects existing colors and RTL direction. */
+/* No local form fields or JavaScript submission; Google Forms receives all inquiries. */
+.sallm-contact{position:relative}.legacy-anchor{display:block;position:relative;top:-110px;height:0;visibility:hidden}
+.contact-hub{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,.85fr);gap:22px;align-items:stretch}
+.contact-hub-main,.contact-hub-aside{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px}
+.contact-hub-main{box-shadow:0 10px 35px #102a3509}.contact-hub-label{display:inline-flex;gap:10px;align-items:center;color:var(--teal);font-weight:700;font-size:.95rem}
+.contact-hub-main h3{font-size:clamp(1.5rem,2.5vw,2rem);margin:17px 0 12px}.contact-hub-main p,.contact-hub-aside p{color:var(--muted);font-size:1rem}
+.contact-topics{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:23px 0 27px;padding:0}.contact-topics li{background:#e9f3ed;border:1px solid #d3e5d9;border-radius:999px;padding:6px 13px;color:#155648;font-size:.9rem;font-weight:600}
+.contact-cta{min-width:min(100%,300px)}.contact-form-note{font-size:.9rem!important;margin:12px 0 0!important}
+.contact-hub-aside{background:#edf4ef}.contact-hub-aside h3{margin:0 0 14px;font-size:1.25rem}.contact-hub-aside p{margin:12px 0}.contact-privacy{border-top:1px solid var(--line);padding-top:16px}
+@media(max-width:800px){.contact-hub{grid-template-columns:1fr}.contact-hub-main,.contact-hub-aside{padding:24px}}
+@media(max-width:520px){.contact-hub-main,.contact-hub-aside{padding:20px}.contact-topics{gap:8px}.contact-topics li{font-size:.85rem}.contact-cta{width:100%}}
+
+
+/* Research summary links to one dedicated bilingual information page. */
+/* The landing page intentionally does not duplicate unpublished details. */
+.research-detail-link{margin-top:24px;display:flex}.research-detail-link .btn{border-color:#b8d6ca;background:#eaf5ef;color:#102a35}.research-detail-link .btn:hover{background:#d5ecdf}
+
+/* BILINGUAL LAYOUT FIX: show only the selected translation; never concatenate both. */
+html[lang="ar"] span[lang="en"], html[lang="en"] span[lang="ar"] { display: none !important; }
+/* Any active translation used as a heading, paragraph, or explanation gets its own line. */
+:where(h1,h2,h3,h4,p,summary,.lede,.meta,.note,.eyebrow,.strip-inner,.section-head,.art-top,.art-label,.model-number,.research-foot,.status,.notice-grid article,.contact-hub,.profile-box,.page-hero) > span[lang] { display: block; }
+/* Inline buttons/links keep icons on the same line, while texts retain proper script direction. */
+span[lang="ar"] { direction: rtl; unicode-bidi: isolate; }
+span[lang="en"] { direction: ltr; unicode-bidi: isolate; }
+html[lang="ar"] :where(p,h1,h2,h3,h4,summary,li,.note,.meta) { text-align: start; }
+/* Technical model or service names remain legible without scrambling Arabic punctuation. */
+bdi[dir="ltr"] { direction: ltr; unicode-bidi: isolate; }
+.latin-explainer { display: block; direction: ltr; unicode-bidi: isolate; text-align: start; font-size: .94em; margin-block: 6px; line-height: 1.65; }
+html[lang="ar"] .latin-explainer { text-align: right; }
+
+/* Show public product names in the chosen language without mixing text direction. */
+.brand span[lang="ar"]{direction:rtl;unicode-bidi:isolate;letter-spacing:0}
+.brand span[lang="en"]{direction:ltr;unicode-bidi:isolate}
+
+/* Give the conversational hero a clear brand name and a smaller, readable tagline. */
+.hero h1 em{display:block;font-size:clamp(1.35rem,2.7vw,2.35rem);line-height:1.55;letter-spacing:-.4px;margin-top:13px;font-weight:650}
+html[lang="ar"] .hero h1 em{font-size:clamp(1.35rem,2.8vw,2.1rem);line-height:1.8;letter-spacing:0}
+.art-title small{display:block;font-size:1.55rem;line-height:1.7;font-weight:500}
+html[lang="ar"] .art-title small{font-size:1.5rem}
+@media(max-width:760px){.hero h1 em{font-size:1.4rem}html[lang="ar"] .hero h1 em{font-size:1.35rem}}
+</style><style>
+
+/* Integrated A7B trial and concise editorial cards; keep runtime and credentials on Hugging Face. */
+.salem-try-section{background:#eaf2ed;border-block:1px solid var(--line);padding-block:66px}
+.salem-try-intro{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}
+.salem-try-intro>div{max-width:780px}.salem-try-intro h2{margin-bottom:8px}.salem-try-intro p{color:var(--muted);margin:0}
+.salem-subtle-link{flex-shrink:0;color:var(--teal);text-decoration:underline;text-underline-offset:5px;font-weight:700}
+.salem-embed-wrap{border:1px solid #c9dad0;background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 14px 35px #102a3510}
+.salem-embed-top{background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 21px;flex-wrap:wrap}
+.salem-demo-identity{display:flex;align-items:center;gap:10px;direction:ltr}.salem-demo-identity strong{font-size:1.12rem}.salem-demo-identity small{color:#d9e8e2;font-size:.88rem}
+.salem-demo-dot{width:8px;height:8px;background:#8be0c2;border-radius:50%;flex-shrink:0}
+.salem-hf-link{font-size:.94rem;color:#d8faec;font-weight:700;text-decoration:underline;text-underline-offset:5px}
+.salem-live-frame{width:100%;height:clamp(650px,80vh,910px);display:block;border:0;background:white}
+.salem-trial-footnote{color:var(--muted);font-size:.92rem;line-height:1.8;margin:15px 0 18px}
+.salem-quota-tip{border:1px solid #c4d7cc;background:#fff;display:flex;gap:16px;align-items:center;padding:19px 22px;border-radius:11px}
+.salem-tip-icon{flex-shrink:0;display:grid;place-items:center;width:40px;height:40px;border-radius:11px;background:#e5f4e9;color:var(--teal);font-size:1.5rem}
+.salem-tip-copy{flex:1;min-width:0}.salem-tip-copy strong{display:block;font-size:1.1rem}.salem-tip-copy p{margin:5px 0 0;font-size:.94rem;color:var(--muted);line-height:1.65}
+.salem-tip-action{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:8px;padding:10px 16px;border:1px solid var(--teal);color:var(--teal);font-size:.91rem;font-weight:750;min-height:46px}
+.salem-tip-action:hover{background:#edf6ef}.salem-update-preview{padding-block:42px}.salem-preview-panel{background:#fff;border:1px solid var(--line);border-radius:13px;padding:26px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.salem-preview-panel h2{font-size:1.75rem;margin:9px 0}.salem-preview-panel p{color:var(--muted);margin:0;max-width:690px}.salem-preview-panel>a{flex-shrink:0}
+html[lang="ar"] .salem-demo-identity small{direction:rtl;text-align:right}
+@media(max-width:860px){.salem-quota-tip{flex-wrap:wrap}.salem-tip-action{margin-inline-start:56px}.salem-try-intro{align-items:start;flex-direction:column}.salem-preview-panel{align-items:start;flex-direction:column}}
+@media(max-width:760px){.salem-try-section{padding-block:38px}.salem-embed-top{padding:12px 14px}.salem-live-frame{height:clamp(590px,80vh,790px)}.salem-tip-action{width:100%;margin:0}.salem-quota-tip{gap:12px;padding:16px}.salem-demo-identity{flex-wrap:wrap}
+.nav-inner{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 14px}.nav-inner .brand{grid-column:auto;grid-row:auto}.nav-inner nav{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:space-between;width:100%;gap:4px 12px}.nav-inner nav .nav-link{grid-column:auto!important;grid-row:auto!important;flex:1;text-align:center;white-space:nowrap;font-size:.9rem;padding-inline:3px}.nav-inner .language-picker{order:-1;margin-inline-start:auto;flex:0 0 auto;grid-column:auto;grid-row:auto}.nav-inner nav{position:relative;padding-top:3px}
+}
+@media(max-width:460px){.salem-live-frame{height:700px}.salem-tip-copy{flex-basis:calc(100% - 55px)}.nav-inner nav .nav-link{font-size:.83rem}.salem-demo-identity small{width:100%}}
+@media(prefers-reduced-motion:reduce){.salem-try-section *{scroll-behavior:auto}}
+
+</style><style>
+/* Keep the Arabic/English switch beside the logo on phones; all navigation stays in one compact row. */
+@media(max-width:760px){
+  .nav-inner{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:7px 12px!important;align-items:center!important;min-height:0;padding-block:9px!important}
+  .nav-inner>.brand{grid-column:1!important;grid-row:1!important;align-self:center}
+  .nav-inner>.language-picker{grid-column:2!important;grid-row:1!important;justify-self:end!important;order:initial!important}
+  .nav-inner>nav{grid-column:1/-1!important;grid-row:2!important;width:100%;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:space-between!important;padding-top:0!important;gap:2px!important}
+  .nav-inner>nav .nav-link{min-width:0;white-space:nowrap;grid-column:auto!important;grid-row:auto!important;flex:1!important;font-size:.87rem;padding:6px 1px!important;text-align:center}
+}
+@media(max-width:390px){.nav-inner>nav .nav-link{font-size:.80rem}.nav-inner>.brand{font-size:1.45rem}}
+</style></head><body><a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ar">انتقل إلى المحتوى</span></a><header class="nav"><div class="wrap nav-inner"><a aria-label="SALLM AI / سالم" class="brand" href="#main"><span lang="en">SALLM AI</span><span lang="ar">سالم</span></a><nav aria-label="Main navigation"><a class="nav-link" href="#try-salem"><span lang="en">Try Salem</span><span lang="ar">جرّب سالم</span></a><a class="nav-link" href="#models"><span lang="en">Models</span><span lang="ar">النماذج</span></a><a class="nav-link" href="#research"><span lang="en">Our approach</span><span lang="ar">عن الفكرة</span></a><a class="nav-link" href="#connect"><span lang="en">Contact</span><span lang="ar">تواصل معنا</span></a></nav><div aria-label="Language / اللغة" class="language-picker" role="group"><button aria-pressed="true" class="lang-btn" id="lang-en" lang="en" type="button">English</button><button aria-pressed="false" class="lang-btn" id="lang-ar" lang="ar" type="button">العربية</button></div></div></header><main data-title-ar="سالم — خويّك في السوالف وشريكك في الأفكار" data-title-en="SALLM AI — Conversations that feel closer" id="main"><div class="wrap hero"><div><div class="eyebrow"><span lang="en">Meet SALLM AI · Research preview</span><span lang="ar">أهلًا بك في تجربة سالم · إصدار بحثي</span></div><h1><span lang="en">SALLM AI<br/><em>A more natural way to talk, think, and explore.</em></span><span lang="ar">سالم<br/><em>خويّك في السوالف، وشريكك في الأفكار.</em></span></h1><p class="lede"><span lang="en">Have an idea to develop, a decision to think through, or something on your mind? Meet SALLM AI: an experimental conversation companion adapted with carefully selected examples from real discussions in Saudi-focused online communities.</span><span lang="ar">عندك فكرة ودك تطورها؟ قرار محتار فيه؟ أو موضوع تبي تناقشه؟ سالم رفيقك الذكي في الحوار اليومي، بأسلوب مستلهم من محادثات واقعية في مجتمعات سعودية على الإنترنت.</span></p><div class="actions"><a class="btn primary" href="#try-salem"><span lang="en">Try SALLM AI</span><span lang="ar">جرّب سالم الآن</span></a><a class="btn secondary" href="#research"><span lang="en">Discover the project</span><span lang="ar">تعرّف على الفكرة</span></a></div><p class="meta"><span lang="en">Developed by Dr. Zeyad Alghamdi · Released 11 November 2026</span><span lang="ar">تطوير د. زياد الغامدي · صدر في ١١ نوفمبر ٢٠٢٦</span></p></div><div aria-hidden="true" class="art"><div class="art-grid"></div><div class="art-top"><span lang="en">SALLM AI / NATURAL CONVERSATION</span><span lang="ar">سالم / للحديث اليومي</span></div><div class="art-title"><span lang="en">SALLM AI<br/><small>Talk your way.</small></span><span lang="ar">سالم<br/><small>على طبيعتك.</small></span></div><div class="art-label"><span><span lang="en">LANGUAGE · IDEAS · CONTEXT</span><span lang="ar">حوار · أفكار · سياق</span></span><span>V1.0</span></div></div></div>
+<div class="strip"><div class="wrap strip-inner"><span><span lang="en">Everyday Saudi Arabic</span><span lang="ar">أسلوب سعودي قريب</span></span><span><span lang="en">Inspired by real conversations</span><span lang="ar">مستوحى من محادثات واقعية</span></span><span><span lang="en">An independent research preview</span><span lang="ar">مشروع بحثي مستقل</span></span></div></div><section aria-labelledby="try-heading" class="salem-try-section" id="try-salem">
+<div class="wrap">
+<div class="salem-try-intro">
+<div>
+<div class="eyebrow"><span lang="en">Try it here</span><span lang="ar">التجربة المباشرة</span></div>
+<h2 id="try-heading"><span lang="en">The conversation starts here.</span><span lang="ar">ابدأ حديثك مع سالم.</span></h2>
+<p><span lang="en">Ask a question, share a situation, or explore an idea. The live preview currently uses SALLM A7B.</span><span lang="ar">اسأل عن شيء يشغلك، شارك موقفًا، أو ناقش فكرة جديدة. التجربة المباشرة تعمل حاليًا بنموذج SALLM A7B.</span></p>
+</div>
+<a class="salem-subtle-link" href="try.html"><span lang="en">Open full chat page ↗</span><span lang="ar">فتح المحادثة بصفحة مستقلة ↗</span></a>
+</div>
+<div class="salem-embed-wrap">
+<div class="salem-embed-top">
+<div class="salem-demo-identity"><span aria-hidden="true" class="salem-demo-dot"></span><strong>SALLM A7B</strong><small><span lang="en">Live research demo</span><span lang="ar">نموذج تجريبي مباشر</span></small></div>
+<a class="salem-hf-link" href="https://huggingface.co/spaces/Dr-Zeyad-Alghamdi/SALLM-A7B-V1" rel="noopener noreferrer" target="_blank"><span lang="en">Open on Hugging Face ↗</span><span lang="ar">افتح على Hugging Face ↗</span></a>
+</div>
+<iframe allow="clipboard-read; clipboard-write" class="salem-live-frame" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://dr-zeyad-alghamdi-sallm-a7b-v1.hf.space" title="SALLM A7B live AI conversation"></iframe>
+</div>
+<p class="salem-trial-footnote"><span lang="en">Hosted by Hugging Face. The demo may take a moment to start. If it does not load, open it directly using the link above. SALLM is experimental and can make mistakes; avoid sharing private information.</span><span lang="ar">تعمل التجربة عبر Hugging Face، وقد تستغرق البداية قليلًا. إذا تعذّر ظهور المحادثة، افتحها مباشرة من الرابط أعلاه. سالم نموذج بحثي قد يخطئ؛ تجنّب مشاركة معلوماتك الخاصة.</span></p>
+<div class="salem-quota-tip">
+<div aria-hidden="true" class="salem-tip-icon">✦</div>
+<div class="salem-tip-copy">
+<strong><span lang="en">Want more time to try it?</span><span lang="ar">ودك بوقت أكثر للتجربة؟</span></strong>
+<p><span lang="en">Signing in to a free Hugging Face account raises the included daily ZeroGPU time from 2 to 5 minutes and improves queue priority. Limits are shared across ZeroGPU Spaces, and browser settings may affect sign-in inside embedded chats.</span><span lang="ar">تسجيل الدخول بحساب مجاني في Hugging Face يرفع رصيد ZeroGPU اليومي المشمول من دقيقتين إلى خمس دقائق، ويمنح أولوية أعلى في الانتظار. الرصيد مشترك بين خدمات ZeroGPU، وقد تؤثر إعدادات المتصفح على تسجيل الدخول داخل الصفحة المضمّنة.</span></p>
+</div>
+<a class="salem-tip-action" href="https://huggingface.co/spaces/Dr-Zeyad-Alghamdi/SALLM-A7B-V1" rel="noopener noreferrer" target="_blank"><span lang="en">Sign in &amp; try on Hugging Face ↗</span><span lang="ar">سجّل الدخول وجرّب عبر Hugging Face ↗</span></a>
+</div>
+</div>
+</section>
+<div class="wrap onepage-links"><a href="research.html#evaluation"><span lang="en">Evaluation</span><span lang="ar">التقييم</span></a><a href="updates.html#roadmap"><span lang="en">Roadmap</span><span lang="ar">خطة التطوير</span></a><a href="updates.html#updates"><span lang="en">Updates</span><span lang="ar">المستجدات</span></a><a href="research.html#research-lead"><span lang="en">Research lead</span><span lang="ar">الباحث</span></a></div><section class="wrap" id="models"><div class="section-head"><div><div class="eyebrow"><span lang="en">The model family</span><span lang="ar">عائلة سالم</span></div><h2><span lang="en">Three models, one research direction</span><span lang="ar">ثلاثة نماذج، تجارب متنوعة</span></h2></div><p><span lang="en">Explore three adaptations built on different language-model foundations. Start with A7B here or visit the hosted model demos on Hugging Face.</span><span lang="ar">تعرّف على النماذج المبنية على أسس لغوية مختلفة. يمكنك البدء بـ A7B هنا، أو الانتقال إلى الصفحات المستضافة على Hugging Face.</span></p></div><div class="cards">
+<article class="card"><span class="chip"><span lang="en">V1 · Research preview</span><span lang="ar">إصدار بحثي تجريبي</span></span><h3>SALLM Q9B</h3><p><span lang="en">Adapted from Qwen3.5 9B.</span><span lang="ar">مبني على <bdi>Qwen3.5 9B</bdi>.</span></p><div class="model-number"><span lang="en">9B parameters · Saudi Arabic focus</span><span lang="ar">٩ مليارات معلمة · لهجة سعودية</span></div><a class="btn primary" href="https://huggingface.co/spaces/Dr-Zeyad-Alghamdi/SALLM-Q9B-V1" rel="noopener noreferrer" target="_blank"><span lang="en">Open Q9B demo</span><span lang="ar">فتح تجربة Q9B</span> <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M6 18 18 6M6 6h12v12"></path></svg><span class="sr-only"><span lang="en">(opens in a new tab)</span><span lang="ar">(يفتح في علامة تبويب جديدة)</span></span></a></article>
+<article class="card"><span class="chip"><span lang="en">V1 · Research preview</span><span lang="ar">إصدار بحثي تجريبي</span></span><h3>SALLM A7B</h3><p><span lang="en">Adapted from ALLaM 7B.</span><span lang="ar">مبني على <bdi>ALLaM 7B</bdi>.</span></p><div class="model-number"><span lang="en">7B parameters · Saudi Arabic focus</span><span lang="ar">٧ مليارات معلمة · لهجة سعودية</span></div><a class="btn primary" href="#try-salem"><span lang="en">Try it here</span><span lang="ar">ابدأ التجربة هنا</span> <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M6 18 18 6M6 6h12v12"></path></svg></a></article>
+<article class="card"><span class="chip"><span lang="en">V1 · Research preview</span><span lang="ar">إصدار بحثي تجريبي</span></span><h3>SALLM J7B</h3><p><span lang="en">Adapted from Jais 3 7B.</span><span lang="ar">مبني على <bdi>Jais 3 7B</bdi>.</span></p><div class="model-number"><span lang="en">7B parameters · Saudi Arabic focus</span><span lang="ar">٧ مليارات معلمة · لهجة سعودية</span></div><a class="btn primary" href="https://huggingface.co/spaces/Dr-Zeyad-Alghamdi/SALLM-j7B-V1" rel="noopener noreferrer" target="_blank"><span lang="en">Visit J7B page</span><span lang="ar">زيارة صفحة J7B</span> <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M6 18 18 6M6 6h12v12"></path></svg><span class="sr-only"><span lang="en">(opens in a new tab)</span><span lang="ar">(يفتح في علامة تبويب جديدة)</span></span></a></article>
+</div><p class="note"><span lang="en">A7B is embedded on this website. Q9B and J7B have separate Hugging Face links; availability may vary. Hosting and usage limits are managed by Hugging Face.</span><span lang="ar">النموذج A7B متاح للتجربة هنا داخل الموقع. أما Q9B وJ7B فلهما روابط منفصلة على Hugging Face، وقد يختلف توفرهما. حدود الاستخدام تحددها المنصة.</span></p></section>
+<section class="research" id="research"><div class="wrap"><div class="research-layout"><div><div class="eyebrow"><span lang="en">Why SALLM AI</span><span lang="ar">الفكرة وراء سالم</span></div><h2><span lang="en">More than question and answer.</span><span lang="ar">مو مجرد سؤال وجواب.</span></h2><p><span lang="en">Real conversations have tone, context, and different ways of expressing the same idea. SALLM AI explores how curated examples from social discussions can adapt existing language models for more natural Saudi-Arabic conversation.</span><span lang="ar">في الحديث اليومي، مو كل شيء ينقال بنفس الأسلوب. وراء سالم مشروع بحثي يدرس كيف تساعد أمثلة من نقاشات اجتماعية واقعية على تكييف نماذج لغوية لتقديم حوار أقرب للهجة السعودية وسياقها.</span></p></div><div>
+<div class="principle"><b>01</b><div><h3><span lang="en">Familiar language</span><span lang="ar">لغة قريبة</span></h3><p><span lang="en">A focus on familiar everyday expressions, without forcing dialect into every answer.</span><span lang="ar">الاهتمام بالتعبيرات اليومية والمفردات المألوفة، دون المبالغة في اللهجة.</span></p></div></div>
+<div class="principle"><b>02</b><div><h3><span lang="en">Context matters</span><span lang="ar">السياق مهم</span></h3><p><span lang="en">The goal is a response that fits the situation, not a canned answer. This is still being evaluated.</span><span lang="ar">رد مناسب للموقف، وليس إجابة جاهزة لكل سؤال. هذا هدف نعمل على تقييمه باستمرار.</span></p></div></div>
+<div class="principle"><b>03</b><div><h3><span lang="en">Research-led adaptation</span><span lang="ar">تطوير قائم على البحث</span></h3><p><span lang="en">Established models adapted using curated examples, with evaluation results and methods to follow.</span><span lang="ar">مواءمة نماذج قائمة بأمثلة مختارة بعناية، مع نشر التقييمات والمنهجية لاحقًا.</span></p></div></div>
+</div></div><div class="research-foot"><span lang="en">Research and development: Dr. Zeyad Alghamdi. Built on Qwen, ALLaM, and Jais model foundations.</span><span lang="ar">البحث والتطوير: د. زياد الغامدي. يستند المشروع إلى نماذج Qwen و<bdi dir="ltr">ALLaM</bdi> و<bdi dir="ltr">Jais</bdi>.</span><div class="research-detail-link"><a class="btn secondary" href="research.html"><span lang="en">Research &amp; evaluation</span><span lang="ar">البحث والتقييم</span> <span aria-hidden="true">↗</span></a></div></div></div></section><section class="wrap salem-update-preview" id="project-updates">
+<div class="salem-preview-panel"><div><div class="eyebrow"><span lang="en">Project updates</span><span lang="ar">آخر أخبار المشروع</span></div><h2><span lang="en">Follow what comes next.</span><span lang="ar">وش الجديد في سالم؟</span></h2><p><span lang="en">Release notes, future plans, and service announcements now have their own page—so the homepage stays focused on the conversation.</span><span lang="ar">أخبار الإصدارات والخطوات القادمة وتنبيهات الخدمة في صفحة مستقلة، عشان تبقى الصفحة الرئيسية خفيفة وواضحة.</span></p></div>
+<a class="btn secondary" href="updates.html"><span lang="en">View project updates</span><span lang="ar">شاهد آخر المستجدات</span></a></div>
+</section>
+<!-- LATEST UPDATES: edit the dated article below; copy it for a new announcement, newest first. -->
+<!-- For an outage, specify affected models, start time with timezone, impact, and next update; mark resolved when restored. -->
+<section class="wrap faq" id="faq"><div><div class="eyebrow"><span lang="en">Good to know</span><span lang="ar">قبل التجربة</span></div><h2><span lang="en">A few useful things to know.</span><span lang="ar">تجربة بسيطة، ومعلومات واضحة.</span></h2></div><div>
+<details><summary><span lang="en">What can I try?</span><span lang="ar">ماذا يمكنني أن أجرّب؟</span></summary><p><span lang="en">Discuss an everyday situation, explore an idea, or try drafting a conversational reply. These are exploratory uses; performance may vary across prompts and dialects.</span><span lang="ar">ناقش موقفًا يوميًا، أو استكشف فكرة، أو جرّب صياغة رد حواري. هذه استخدامات استكشافية؛ وقد يختلف الأداء بحسب السؤال واللهجة.</span></p></details>
+<details><summary><span lang="en">How reliable are the responses?</span><span lang="ar">ما مدى موثوقية الردود؟</span></summary><p><span lang="en">SALLM is a research preview. It may produce inaccurate information or miss social context. Natural-sounding language does not guarantee factual accuracy. Verify important information independently.</span><span lang="ar"><bdi dir="ltr">SALLM</bdi> إصدار بحثي تجريبي؛ قد يقدم معلومات غير دقيقة أو لا يلتقط بعض السياق الاجتماعي. طبيعية الأسلوب لا تضمن صحة المعلومة. تحقّق من المعلومات المهمة من مصادر موثوقة.</span></p></details>
+<details><summary><span lang="en">What if my free GPU time runs out?</span><span lang="ar">ماذا يحدث عند انتهاء وقت الاستخدام المجاني؟</span></summary><p><span lang="en">Hugging Face manages ZeroGPU limits across all ZeroGPU Spaces, not separately for SALLM. If you cannot start another response, your remaining quota may be below the time required for the request. The included allowance resets 24 hours after first use in that period. Try again after it resets, or open the model directly on Hugging Face to review platform messages.</span><span lang="ar">تدير <bdi dir="ltr">Hugging Face</bdi> رصيد <bdi dir="ltr">ZeroGPU</bdi> بصورة مشتركة بين جميع مساحات <bdi dir="ltr">ZeroGPU</bdi>، وليس لكل نموذج من <bdi dir="ltr">SALLM</bdi> رصيد مستقل. إذا تعذّر بدء رد جديد، فقد يكون الرصيد المتبقي أقل من الوقت المطلوب للطلب. يتجدد الرصيد المشمول بعد ٢٤ ساعة من أول استخدام في الفترة. يمكنك المحاولة بعد التجدد، أو فتح النموذج على <bdi dir="ltr">Hugging Face</bdi> لمراجعة رسائل المنصة.</span></p></details></div></section>
+<section aria-labelledby="contact-heading" class="wrap sallm-contact" id="connect">
+<!-- One Google Form handles all SALLM inquiries. These anchors preserve legacy deep links. -->
+<!-- No contact details are entered, stored, or transmitted by this GitHub Pages section. -->
+<span aria-hidden="true" class="legacy-anchor" id="collaborate"></span>
+<span aria-hidden="true" class="legacy-anchor" id="report-issue"></span>
+<span aria-hidden="true" class="legacy-anchor" id="request-data"></span>
+<span aria-hidden="true" class="legacy-anchor" id="request-access"></span>
+<div class="section-head">
+<div>
+<div class="eyebrow"><span lang="en">Contact &amp; collaboration</span><span lang="ar">التواصل والتعاون</span></div>
+<h2 id="contact-heading"><span lang="en">Have something to share?</span><span lang="ar">عندك فكرة؟ نسمعك.</span></h2>
+</div>
+<p><span lang="en">Research collaborations, volunteering, feedback or questions — one contact form for everything.</span><span lang="ar">تعاون بحثي، تطوع، اقتراح تطوير، أو استفسار عام — كل الطلبات عبر نموذج تواصل واحد.</span></p>
+</div>
+<div class="contact-hub">
+<div class="contact-hub-main">
+<div class="contact-hub-label"><span aria-hidden="true">✉</span> <span lang="en">One simple contact form</span><span lang="ar">نموذج واحد للتواصل</span></div>
+<h3><span lang="en">We welcome your ideas and feedback</span><span lang="ar">شاركنا فكرتك أو ملاحظتك</span></h3>
+<p><span lang="en">We welcome students, researchers, developers, volunteers, and anyone interested in contributing.</span><span lang="ar">الباب مفتوح للباحثين والطلاب والمطورين والمتطوعين ولكل من يود المساهمة.</span></p>
+<ul aria-label="Contact topics" class="contact-topics">
+<li><span lang="en">Research collaboration</span><span lang="ar">التعاون البحثي</span></li>
+<li><span lang="en">Volunteering</span><span lang="ar">التطوع</span></li>
+<li><span lang="en">Partnerships</span><span lang="ar">الشراكات</span></li>
+<li><span lang="en">Technical contributions</span><span lang="ar">المساهمات التقنية</span></li>
+<li><span lang="en">Model or data requests</span><span lang="ar">طلبات النماذج أو البيانات</span></li>
+<li><span lang="en">Suggestions &amp; issue reports</span><span lang="ar">المقترحات والإبلاغ عن المشاكل</span></li>
+</ul>
+<a aria-describedby="contact-external-note" class="btn primary contact-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSe5k4asR7qlbhmI8UIjnPNAv1NtXdIBPnQQe-3US7FbTRbK-A/viewform?usp=publish-editor" rel="noopener noreferrer" target="_blank">
+<span lang="en">Contact the SALLM team</span><span lang="ar">تواصل معنا</span>
+<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M6 18 18 6M6 6h12v12"></path></svg>
+</a>
+<p class="contact-form-note" id="contact-external-note"><span lang="en">Opens Google Forms in a new tab. Please include your request type in the subject.</span><span lang="ar">يفتح نموذج التواصل الخارجي في تبويب جديد. يرجى توضيح نوع الطلب في عنوان الرسالة.</span></p>
+</div>
+<aside aria-label="Contact form details" class="contact-hub-aside">
+<h3><span lang="en">A simple way to reach us</span><span lang="ar">طريقة سهلة للتواصل</span></h3>
+<p><span lang="en">Share your name, message subject, and details, plus the contact information you prefer.</span><span lang="ar">اكتب اسمك وموضوع رسالتك وتفاصيلها، وأضف وسائل التواصل التي تناسبك.</span></p>
+<p><span lang="en">Submissions are reviewed based on their nature; access to research resources and collaborations is not guaranteed.</span><span lang="ar">تُراجع الطلبات وفق طبيعتها، ولا يعني إرسال النموذج ضمان قبول تعاون أو إتاحة موارد بحثية.</span></p>
+<p class="contact-privacy"><span lang="en">Avoid including passwords, access tokens, sensitive personal data, or confidential conversations. Submissions are handled through Google Forms.</span><span lang="ar">يرجى عدم إرسال كلمات المرور أو رموز الوصول أو البيانات الشخصية الحساسة أو المحادثات السرية. تُستقبل الطلبات عبر نموذج التواصل الخارجي.</span></p>
+</aside>
+</div>
+</section><section class="wrap usage-compact" id="disclaimer"><p class="compact-notice"><span lang="en">Research preview. Responses may be inaccurate or miss context. Do not enter sensitive information.</span><span lang="ar">إصدار بحثي تجريبي. قد تكون الردود غير دقيقة أو لا تراعي السياق. لا تُدخل معلومات حساسة.</span></p><details class="disclosure"><summary><span lang="en">Read the full usage notice &amp; limitations</span><span lang="ar">اقرأ تنبيه الاستخدام والقيود كاملًا</span></summary><div class="disclosure-body"><div class="notice-grid"><article><h3><span lang="en">AI-generated responses</span><span lang="ar">ردود مولّدة بالذكاء الاصطناعي</span></h3><p><span lang="en">SALLM is an experimental research project. Responses are generated by AI, may contain errors or invented information, and may not reflect the views of the project developer or the teams behind the base models.</span><span lang="ar"><bdi dir="ltr">SALLM</bdi> مشروع بحثي تجريبي. تُنتج الردود آليًا، وقد تتضمن أخطاء أو معلومات مختلقة، ولا تعبّر بالضرورة عن آراء مطوّر المشروع أو فرق النماذج الأساسية.</span></p></article><article><h3><span lang="en">Verify important information</span><span lang="ar">تحقّق من المعلومات المهمة</span></h3><p><span lang="en">Natural language and confident wording do not guarantee accuracy. Verify important information independently. Responses are not a substitute for qualified medical, legal, financial, or other professional advice. Do not use SALLM as an emergency service.</span><span lang="ar">الأسلوب الطبيعي أو الواثق لا يضمن صحة المعلومة. تحقّق من المعلومات المهمة من مصادر مستقلة. لا تُعد الردود بديلًا عن المشورة الطبية أو القانونية أو المالية أو غيرها من المشورة المتخصصة. لا تستخدم <bdi dir="ltr">SALLM</bdi> بوصفه خدمة للطوارئ.</span></p></article><article><h3><span lang="en">Language, context &amp; bias</span><span lang="ar">اللغة والسياق والتحيز</span></h3><p><span lang="en">Performance may vary across topics, dialects, and social situations. Models can misunderstand context and produce biased, inappropriate, or offensive content. The project does not represent every Saudi dialect or viewpoint.</span><span lang="ar">قد يختلف الأداء باختلاف الموضوع واللهجة والموقف الاجتماعي. وقد تسيء النماذج فهم السياق أو تنتج محتوى متحيزًا أو غير مناسب أو مسيئًا. لا يمثل المشروع جميع اللهجات السعودية أو وجهات النظر.</span></p></article><article><h3><span lang="en">Protect personal information</span><span lang="ar">احمِ معلوماتك الشخصية</span></h3><p><span lang="en">Do not submit passwords, identity documents, private conversations, or other confidential information. Demos open on third-party services; review the applicable service terms and privacy information before submitting content. This notice does not promise confidential or unlogged conversations.</span><span lang="ar">لا تُدخل كلمات المرور أو وثائق الهوية أو المحادثات الخاصة أو أي معلومات سرية. تُفتح التجارب على خدمات خارجية؛ راجع شروط الخدمة ومعلومات الخصوصية ذات الصلة قبل إرسال المحتوى. لا يتضمن هذا التنبيه ضمانًا لسرية المحادثات أو عدم تسجيلها.</span></p></article><article><h3><span lang="en">Availability &amp; updates</span><span lang="ar">توفر الخدمة والتحديثات</span></h3><p><span lang="en">Demos may be slow, temporarily unavailable, changed, or withdrawn. Continuous availability and response times are not guaranteed. Service announcements on this website are manually maintained, and roadmap dates are tentative.</span><span lang="ar">قد تكون التجارب بطيئة أو غير متاحة مؤقتًا، وقد تُعدّل أو يُوقف تشغيلها. لا يُضمن التوفر المستمر أو وقت محدد للاستجابة. تُحدّث تنبيهات الخدمة يدويًا، ومواعيد خارطة الطريق مبدئية.</span></p></article><article><h3><span lang="en">Responsible use &amp; model credits</span><span lang="ar">الاستخدام المسؤول ونَسب النماذج</span></h3><p><span lang="en">Do not use the models to harm others, impersonate people, violate privacy, or generate unlawful content. SALLM builds on Qwen, ALLaM, and Jais models; attribution does not imply endorsement. Use and redistribution remain subject to the applicable model and service terms.</span><span lang="ar">لا تستخدم النماذج للإضرار بالآخرين أو انتحال هوياتهم أو انتهاك خصوصيتهم أو إنتاج محتوى غير مشروع. يستند <bdi dir="ltr">SALLM</bdi> إلى نماذج Qwen و<bdi dir="ltr">ALLaM</bdi> و<bdi dir="ltr">Jais</bdi>؛ ولا يعني ذكرها تأييد الجهات المطوّرة للمشروع. يخضع الاستخدام وإعادة التوزيع للشروط ذات الصلة بالنماذج والخدمات.</span></p></article></div></div></details></section></main><footer><div class="wrap footer-inner"><div><a aria-label="SALLM AI / سالم" class="brand" href="#main"><span lang="en">SALLM AI</span><span lang="ar">سالم</span></a><p><span lang="en">Research &amp; development · Dr. Zeyad Alghamdi</span><span lang="ar">البحث والتطوير · د. زياد الغامدي</span></p></div><div class="footer-links"><a href="updates.html"><span lang="en">Updates</span><span lang="ar">المستجدات</span></a><a href="#research"><span lang="en">Research</span><span lang="ar">البحث</span></a><a href="research.html#research-lead"><span lang="en">Research lead</span><span lang="ar">الباحث</span></a><a href="#connect"><span lang="en">Collaborate</span><span lang="ar">التعاون</span></a><a href="#connect"><span lang="en">Report an issue</span><span lang="ar">الإبلاغ عن مشكلة</span></a><a href="#connect"><span lang="en">Request data</span><span lang="ar">طلب البيانات</span></a><a href="#connect"><span lang="en">Contact</span><span lang="ar">التواصل</span></a><a href="#disclaimer"><span lang="en">Usage notice</span><span lang="ar">تنبيه الاستخدام</span></a></div></div></footer><!-- CONTACT SETTINGS: fill verified public email addresses and profile URLs; blank links remain hidden. -->
+<script>
+// Fill in verified public contact details and professional links below.
+// Empty optional contact fields stay hidden; the Google Form is the primary contact route.
+window.SALLM_CONFIG = {
+  "general_email": "",
+  "research_email": "",
+  "support_email": "",
+  "safety_email": "",
+  "privacy_email": "",
+  "media_email": "",
+  "access_email": "",
+  "data_email": "",
+  "organization": "",
+  "website": "",
+  "linkedin": "",
+  "scholar": "",
+  "cv": "",
+  "social": "",
+  "response_time": ""
+};
+
+</script>
+<script>
+// Handles bilingual navigation and optional configured contact links.
+// The single Google Form is external; only language preference is saved locally.
+(() => {
+  const config = window.SALLM_CONFIG || {};
+  const validLanguage = value => value === 'ar' || value === 'en';
+  const isArabic = () => document.documentElement.lang === 'ar';
+  const english = document.getElementById('lang-en');
+  const arabic = document.getElementById('lang-ar');
+  const emailOK = value => typeof value === 'string' && /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(value);
+  function safeLink(value, email) {
+    if (!value || typeof value !== 'string') return null;
+    if (email) return emailOK(value) ? 'mailto:' + value : null;
+    try { const url = new URL(value, location.href); return ['https:', 'http:'].includes(url.protocol) ? url.href : null; } catch (_) { return null; }
+  }
+  let contactsShown = 0;
+  document.querySelectorAll('[data-config]').forEach(link => {
+    const key = link.dataset.config;
+    const href = safeLink(config[key], key.endsWith('_email'));
+    if (!href) return;
+    link.href = href;
+    link.hidden = false;
+    if (!key.endsWith('_email')) { link.target = '_blank'; link.rel = 'noopener noreferrer'; }
+    contactsShown++;
+  });
+  if (contactsShown) document.querySelectorAll('[data-contact-empty]').forEach(el => { el.hidden = true; });
+  function apply(lang, remember = false) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    english?.setAttribute('aria-pressed', String(lang === 'en'));
+    arabic?.setAttribute('aria-pressed', String(lang === 'ar'));
+    document.querySelector('nav')?.setAttribute('aria-label', lang === 'ar' ? 'التنقل الرئيسي' : 'Main navigation');
+    const main = document.querySelector('main');
+    if (main) document.title = lang === 'ar' ? main.dataset.titleAr : main.dataset.titleEn;
+    // Keep the selected language when visitors move between the static HTML pages.
+    document.querySelectorAll('a[href]').forEach(link => {
+      const raw = link.getAttribute('href');
+      if (!raw || raw.startsWith('#') || /^(https?:|mailto:|tel:)/i.test(raw)) return;
+      try { const url = new URL(raw, location.href); if (url.pathname.endsWith('.html')) { url.searchParams.set('lang', lang); link.setAttribute('href', url.pathname.split('/').pop() + url.search + url.hash); } } catch (_) {}
+    });
+    if (remember) {
+      try { localStorage.setItem('sallm-language', lang); } catch (_) {}
+      try { const url = new URL(location.href); url.searchParams.set('lang', lang); history.replaceState(null, '', url); } catch (_) {}
+    }
+  }
+  let saved;
+  try { saved = localStorage.getItem('sallm-language'); } catch (_) {}
+  const query = new URLSearchParams(location.search).get('lang');
+  apply(validLanguage(query) ? query : validLanguage(saved) ? saved : (navigator.language || '').startsWith('ar') ? 'ar' : 'en');
+  english?.addEventListener('click', () => apply('en', true));
+  arabic?.addEventListener('click', () => apply('ar', true));
+
+  // Open details when an in-page link or shared hash targets a collapsed request.
+  // This supports direct links such as index.html?lang=ar#request-data.
+  function revealSection() {
+    let id; try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
+    const target = document.getElementById(id); if (!target) return;
+    let current = target;
+    while (current) { if (current.tagName === 'DETAILS') current.open = true; current = current.parentElement; }
+    target.scrollIntoView({block:'start'});
+  }
+  window.addEventListener('hashchange', revealSection);
+  document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => {
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (target?.tagName === 'DETAILS') target.open = true;
+  }));
+  if (location.hash) revealSection();
+
+
+})();
+
+</script></body></html>
